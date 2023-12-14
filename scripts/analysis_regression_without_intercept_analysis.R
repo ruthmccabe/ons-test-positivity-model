@@ -101,7 +101,7 @@ plot_grid(ggplot(lm_results_ci %>% filter(intercept=="No Intercept",
             theme(strip.background = element_rect(fill="white"),
                   legend.position="bottom")+
             labs(x="Lag (days)",y="Coefficient (Gamma1) \nfor r(t) models",col="Knots (as % of data points)",
-                 fill="Knots (as % of data points)",tag="A")+
+                 fill="Knots (as % of data points)",tag="B")+
             scale_colour_manual(values=c("#588157","#62B6CB","#1B4965"))+
             scale_fill_manual(values=c("#588157","#62B6CB","#1B4965"))+
             scale_y_continuous(breaks=seq(-0.2,1,0.4)),
