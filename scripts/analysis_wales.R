@@ -352,6 +352,23 @@ plot_grid(plot_grid(panel_A,panel_F,nrow=1,rel_widths=c(2.5,1)),
 ggsave("outputs/analysis/Wales.png",width=10,height=9)
 
 
+plot_grid(plot_grid(panel_A + scale_x_date(date_breaks = "3 months",date_labels = "%b-%y"),
+                    panel_F+labs(tag="D"),nrow=1,align="hv",axis="ltrb",
+                    rel_widths=c(1.75,1)),
+          plot_grid(panel_B+scale_x_date(date_breaks = "3 months",date_labels = "%b-%y",
+                                         limits = c(as.Date("2020-07-30"),as.Date("2022-12-31"))),
+                    panel_G+labs(tag="E"),nrow=1,align="hv",axis="ltrb",
+                    rel_widths=c(1.75,1)),
+          plot_grid(panel_D+labs(tag="C",y="Instantaneous growth rate r(t)")+
+                      scale_x_date(date_breaks = "3 months",date_labels = "%b-%y",
+                                   limits = c(as.Date("2020-07-30"),as.Date("2022-12-31"))),
+                    panel_H+labs(tag="F"),nrow=1,align="hv",axis="ltrb",
+                    rel_widths=c(1.75,1)),
+          nrow=3,
+          rel_heights=c(1,1,1.4))
+ggsave("outputs/analysis/Wales_without_scatter.png",width=9,height=7)
+
+
 #### plot wihtout any lags for the supplement 
 
 panel_B_nolag <- ggplot()+
