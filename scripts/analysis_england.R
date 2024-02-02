@@ -292,7 +292,7 @@ panel_F <- ggplot(assessment %>% filter(lag<=20,lag>-20,assessment=="R2"),
         legend.position="none")+
   geom_vline(aes(xintercept=opt_lag,col=factor(knot_prop*100)),linetype="dotted",lwd=1)+
   labs(x="Lag (days)",
-       y="R2",
+       y=expression (~R^2),
        col="Knots (% of data points)",tag="F")+
   scale_y_continuous(breaks=seq(0,1,0.25),limits = c(0,1))+
   guides(col = guide_legend(title.position = "top",nrow=1))+
